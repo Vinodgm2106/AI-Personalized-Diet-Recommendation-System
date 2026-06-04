@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual Environment
+venv/
+vinodenv/
+
+# VS Code
+.vscode/
+
+# Streamlit Secrets
+.streamlit/
+python/.streamlit/
+secrets.toml
+
+# Environment Variables
+.env
+
+# Datasets
+datasets/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Test Files
+python/test_gemini.py
