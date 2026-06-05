@@ -313,14 +313,6 @@ AI-Personalized-Diet-Recommendation-System/
 │   ├── app.py
 │   ├── meal_plan_generator.py
 │   ├── gemini_chatbot.py
-│   │
-│   ├── USDA_Nutrition_Dataset_Cleaning.ipynb
-│   ├── bmi_preprocessing.ipynb
-│   ├── calorie_preprocessing.ipynb
-│   ├── merge_final_dataset.ipynb
-│   ├── feature_engineering.ipynb
-│   ├── model_training.ipynb
-│   └── recommendation_system.ipynb
 │
 ├── outputs/
 │   ├── home_page.png
