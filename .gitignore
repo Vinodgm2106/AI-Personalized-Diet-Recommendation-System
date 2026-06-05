@@ -2,10 +2,6 @@
 __pycache__/
 *.pyc
 
-# Virtual Environment
-venv/
-vinodenv/
-
 # VS Code
 .vscode/
 
@@ -14,11 +10,6 @@ vinodenv/
 python/.streamlit/
 secrets.toml
 
-# Environment Variables
-.env
-
 # Jupyter
 .ipynb_checkpoints/
 
-# Test Files
-python/test_gemini.py
