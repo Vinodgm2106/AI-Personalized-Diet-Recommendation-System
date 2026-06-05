@@ -8,7 +8,7 @@ The project integrates USDA FoodData Central nutrition data, machine learning mo
 
 ---
 
-# 🏗️ Project Architecture
+# Project Architecture
 
 User Input
 ↓
@@ -436,8 +436,3 @@ __pycache__/
 - Advanced nutrition analytics
 - Personalized workout planning
 
----
-
-# 📈 Resume Description
-
-Built an AI-powered Personalized Diet Recommendation System using Machine Learning, USDA FoodData Central nutrition data, Streamlit, and Google Gemini API to generate customized food recommendations, BMI analysis, calorie planning, macronutrient tracking, and a 3-month personalized meal plan based on user health metrics and fitness goals.
