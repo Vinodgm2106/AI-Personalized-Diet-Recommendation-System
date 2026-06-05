@@ -17,9 +17,6 @@ secrets.toml
 # Environment Variables
 .env
 
-# Datasets
-datasets/
-
 # Jupyter
 .ipynb_checkpoints/
 
