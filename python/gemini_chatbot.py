@@ -31,3 +31,5 @@ def ask_gemini(prompt):
     """
         else:
             return f"Error: {str(e)}"
+        
+

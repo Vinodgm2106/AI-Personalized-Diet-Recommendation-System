@@ -73,7 +73,7 @@ Provides:
 
 ---
 
-# 📊 Datasets Used
+#  Datasets Used
 
 ## USDA FoodData Central Dataset
 
@@ -313,6 +313,14 @@ AI-Personalized-Diet-Recommendation-System/
 │   ├── app.py
 │   ├── meal_plan_generator.py
 │   ├── gemini_chatbot.py
+│   │
+│   ├── USDA_Nutrition_Dataset_Cleaning.ipynb
+│   ├── bmi_preprocessing.ipynb
+│   ├── calorie_preprocessing.ipynb
+│   ├── merge_final_dataset.ipynb
+│   ├── feature_engineering.ipynb
+│   ├── model_training.ipynb
+│   └── recommendation_system.ipynb
 │
 ├── outputs/
 │   ├── home_page.png
@@ -435,4 +443,10 @@ __pycache__/
 - Cloud deployment
 - Advanced nutrition analytics
 - Personalized workout planning
+
+---
+
+# 📈 Resume Description
+
+Built an AI-powered Personalized Diet Recommendation System using Machine Learning, USDA FoodData Central nutrition data, Streamlit, and Google Gemini API to generate customized food recommendations, BMI analysis, calorie planning, macronutrient tracking, and a 3-month personalized meal plan based on user health metrics and fitness goals.
 
