@@ -1,13 +1,17 @@
-#pip install streamlit pandas joblib
-# =====================================================
-# AI PERSONALIZED DIET RECOMMENDATION SYSTEM
-# =====================================================
-
+import os
 import streamlit as st
 import pandas as pd
 import joblib
 from gemini_chatbot import ask_gemini
 from meal_plan_generator import generate_meal_plan
+
+# =====================================================
+# BASE DIRECTORY & FILE PATHS
+# =====================================================
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATASET_PATH = os.path.join(BASE_DIR, "Cleaned_data", "feature_engineered_dataset.csv")
+MODEL_PATH = os.path.join(BASE_DIR, "Cleaned_data", "diet_recommendation_model.pkl")
 
 # =====================================================
 # PAGE CONFIG
@@ -139,17 +143,14 @@ st.markdown(page_bg, unsafe_allow_html=True)
 # LOAD DATASET
 # =====================================================
 
-df = pd.read_csv(
-    r"/home/cnssec/Downloads/diet/Cleaned_data/feature_engineered_dataset.csv"
-)
+df = pd.read_csv(DATASET_PATH)
 
 # =====================================================
 # LOAD MODEL
 # =====================================================
 
-model = joblib.load(
-    r"/home/cnssec/Downloads/diet/Cleaned_data/diet_recommendation_model.pkl"
-)
+model = joblib.load(MODEL_PATH)
+
 
 # =====================================================
 # cleaniing food colums
