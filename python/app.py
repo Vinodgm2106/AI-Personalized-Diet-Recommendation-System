@@ -4,6 +4,8 @@ import pandas as pd
 import joblib
 from gemini_chatbot import ask_gemini
 from meal_plan_generator import generate_meal_plan
+from pdf_generator import generate_pdf_report, generate_meal_plan_pdf
+
 
 # =====================================================
 # BASE DIRECTORY & FILE PATHS
@@ -708,21 +710,24 @@ if st.session_state.get("generated", False):
     # DOWNLOAD FULL 3 MONTH PLAN
     # ===================================
 
-    csv_plan = meal_plan.to_csv(
-        index=False
-    )
+    csv_plan = meal_plan.to_csv(index=False)
+    pdf_plan_bytes = generate_meal_plan_pdf(meal_plan, goal, round(tdee))
 
-    st.download_button(
-
-        "📥 Download 3-Month Diet Plan",
-
-        csv_plan,
-
-        "3_month_diet_plan.csv",
-
-        "text/csv"
-    )
-
+    col_plan1, col_plan2 = st.columns(2)
+    with col_plan1:
+        st.download_button(
+            "📥 Download 3-Month Plan (CSV)",
+            csv_plan,
+            "3_month_diet_plan.csv",
+            "text/csv"
+        )
+    with col_plan2:
+        st.download_button(
+            "📄 Download 3-Month Plan (PDF)",
+            pdf_plan_bytes,
+            "3_month_diet_plan.pdf",
+            "application/pdf"
+        )
 
     # =================================================
     # CHART
@@ -765,21 +770,28 @@ if st.session_state.get("generated", False):
     """)
 
     # =================================================
-    # DOWNLOAD BUTTON
+    # DOWNLOAD BUTTONS FOR RECOMMENDATIONS
     # =================================================
 
     csv = foods.to_csv(index=False)
+    pdf_rec_bytes = generate_pdf_report(goal, bmi, water, protein, bmr, tdee, foods)
 
-    st.download_button(
+    col_rec1, col_rec2 = st.columns(2)
+    with col_rec1:
+        st.download_button(
+            label="📥 Download Recommendations (CSV)",
+            data=csv,
+            file_name="diet_recommendations.csv",
+            mime="text/csv"
+        )
+    with col_rec2:
+        st.download_button(
+            label="📄 Download Recommendations (PDF)",
+            data=pdf_rec_bytes,
+            file_name="diet_recommendations.pdf",
+            mime="application/pdf"
+        )
 
-        label="📥 Download Recommendations",
-
-        data=csv,
-
-        file_name="diet_recommendations.csv",
-
-        mime="text/csv"
-    )
 
 # =====================================================
 # FOOTER
